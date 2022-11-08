@@ -1,0 +1,15 @@
+﻿@model Core.VM.VMStudent
+
+<div class="text-center" style="margin-top:25px;">
+    <form action="/Home/Edit" method="post">
+        <input readonly type="type" asp-for="Id" />
+        <label> اسم کامل : </label>
+        <input required class="rounded" type="type" asp-for="FullName" />
+        <label> اسم سن : </label>
+        <input required class="rounded" type="number" asp-for="Age" />
+        <label> اسم مقطع تحصیلی : </label>
+        <input required class="rounded" type="type" asp-for="Grade" />
+        <br />
+        <button class="btn-dark rounded" type="submit">آپدیت</button>
+    </form>
+</div>

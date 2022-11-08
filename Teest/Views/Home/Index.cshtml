@@ -1,0 +1,59 @@
+﻿@model Core.VM.VMStudent
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+<div class="text-center" style="margin-top:25px;">
+    <form action="/Home/add" method="post">
+        <label> اسم کامل : </label>
+        <input required class="rounded" type="type" asp-for="FullName"/>
+        <label> اسم سن : </label>
+        <input required class="rounded" type="number" asp-for="Age"/>
+        <label> اسم مقطع تحصیلی : </label>
+        <input required class="rounded" type="type" asp-for="Grade"/>
+        <br />
+        <button class="btn-dark rounded" type="submit">ذخیره</button>
+    </form>
+</div>
+
+<div style="margin-top:25px;">
+
+    <table>
+
+        <tr>
+            <th>FullName</th>
+            <th>Age</th>
+            <th>Grade</th>
+            <th>delete</th>
+            <th>update</th>
+        </tr>
+
+        @foreach (var item in ViewBag.a)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Age</td>
+                <td>@item.Grade</td>
+                <td><a href="/Home/deletes/@item.Id">delete</a></td>
+                <td><a href="/Home/Update/@item.Id">update</a></td>
+            </tr>
+        }
+
+    </table>
+
+</div>
